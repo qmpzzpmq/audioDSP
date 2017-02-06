@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="matlab,evalin,assignin," />
 
 
 
@@ -84,40 +84,19 @@
 
 
 
-<meta name="description" content="title: matlab多层级编程参数包的问题(1)categories:
-
-matlab-programmingtags:
-matlab
-evalin
-assignin
-
-
-在matlab编程中，顶层的script文件总会调用不同的.m的function文件，而function也会调用下级的不同的funciton.m文件，而如何高效的在其中传递参数包的问题，将严重的影响matlab程序的可读">
+<meta name="description" content="In the matlab programming, the top script file always call different  functions. Also the function calls lower functions. but how to transfer the coefficient package   
+in the different layers functio">
 <meta property="og:type" content="article">
-<meta property="og:title" content="AudioDSP">
-<meta property="og:url" content="http://yoursite.com/2017/02/05/matlab/index.html">
+<meta property="og:title" content="how to transfer cofficients in multi-layer matlab programm efficiently(1)">
+<meta property="og:url" content="http://yoursite.com/2017/02/06/markdownpad-test/index.html">
 <meta property="og:site_name" content="AudioDSP">
-<meta property="og:description" content="title: matlab多层级编程参数包的问题(1)categories:
-
-matlab-programmingtags:
-matlab
-evalin
-assignin
-
-
-在matlab编程中，顶层的script文件总会调用不同的.m的function文件，而function也会调用下级的不同的funciton.m文件，而如何高效的在其中传递参数包的问题，将严重的影响matlab程序的可读">
-<meta property="og:updated_time" content="2017-02-05T12:17:06.000Z">
+<meta property="og:description" content="In the matlab programming, the top script file always call different  functions. Also the function calls lower functions. but how to transfer the coefficient package   
+in the different layers functio">
+<meta property="og:updated_time" content="2017-02-06T10:15:10.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="AudioDSP">
-<meta name="twitter:description" content="title: matlab多层级编程参数包的问题(1)categories:
-
-matlab-programmingtags:
-matlab
-evalin
-assignin
-
-
-在matlab编程中，顶层的script文件总会调用不同的.m的function文件，而function也会调用下级的不同的funciton.m文件，而如何高效的在其中传递参数包的问题，将严重的影响matlab程序的可读">
+<meta name="twitter:title" content="how to transfer cofficients in multi-layer matlab programm efficiently(1)">
+<meta name="twitter:description" content="In the matlab programming, the top script file always call different  functions. Also the function calls lower functions. but how to transfer the coefficient package   
+in the different layers functio">
 
 
 
@@ -145,13 +124,13 @@ assignin
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/02/05/matlab/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/02/06/markdownpad-test/"/>
 
 
 
 
 
-  <title>  | AudioDSP </title>
+  <title> how to transfer cofficients in multi-layer matlab programm efficiently(1) | AudioDSP </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -264,7 +243,7 @@ assignin
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/02/05/matlab/">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/02/06/markdownpad-test/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="Charlie_Tang">
@@ -288,7 +267,7 @@ assignin
             
             
               
-                
+                how to transfer cofficients in multi-layer matlab programm efficiently(1)
               
             
           </h1>
@@ -303,8 +282,8 @@ assignin
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-02-05T16:49:53+08:00">
-                2017-02-05
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-02-06T11:59:09+08:00">
+                2017-02-06
               </time>
             
 
@@ -313,6 +292,28 @@ assignin
             
           </span>
 
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/matlab/" itemprop="url" rel="index">
+                    <span itemprop="name">matlab</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -339,36 +340,24 @@ assignin
       
 
       
-        <hr>
-<p>title: matlab多层级编程参数包的问题(1)<br>categories:</p>
-<ul>
-<li>matlab<br>-programming<br>tags:</li>
-<li>matlab</li>
-<li>evalin</li>
-<li>assignin</li>
-</ul>
-<hr>
-<p>在matlab编程中，顶层的script文件总会调用不同的.m的function文件，而function也会调用下级的不同的funciton.m文件，而如何高效的在其中传递参数包的问题，将严重的影响matlab程序的可读性和高效性。  </p>
-<h2 id="一-传统的funcion参数调用方法"><a href="#一-传统的funcion参数调用方法" class="headerlink" title="一. 传统的funcion参数调用方法"></a>一. 传统的funcion参数调用方法</h2><h3 id="1-1-直接法"><a href="#1-1-直接法" class="headerlink" title="1. 1 直接法"></a>1. 1 直接法</h3><p>在funcion调用的使用，将输入参数和输出参数设定为function的输入输出参数，例如[outdata1,outdata2…..,outcoeficient1,outcoeficient2….]=function(indata1,indata2,….,incoeficient1,incoeficient2….)</p>
-<p>##1. 2 打包法<br>将要传递的参数和数据打包成一个cell的数据类型，参数传递完成之后，取包调用。例如：<br>[outdatapack,coeficientpack]=function(indatapack,incoeficientpack)</p>
-<h2 id="二-assignin和evalin函数"><a href="#二-assignin和evalin函数" class="headerlink" title="二.  assignin和evalin函数"></a>二.  assignin和evalin函数</h2><p>关于assignin和evalin的使用方法，已有很多成熟的叙述，不再赘述。</p>
-<p>例如：当在1.m函数中依次调用1a.m和1b.m函数。在1.m中计算出来参数，e.g.</p>
-<blockquote>
-<p>Incoeficient1=…..<br>Incoeficient2=…..<br>Data1=……<br>Data2=……  </p>
-<p>[outdata1.outdata2]=1a(indata1,indata2)<br>[outdata3.outdata4]=1b(indata3,indata4)<br>(1.m)</p>
-</blockquote>
-<p>在1中调用1a和1b两个函数，完成数据传递，而参数的传递使用assignin和evalin来&gt;传递。</p>
-<blockquote>
-<p>Incoeficient1=evalin(‘caller’,’incoeficient1’);%参数传入<br>Incoeficient2=evalin(‘caller,’incoeficient2’)</p>
-<p>Outcoficient1=assignin(‘caller’,’incoeficient1’,incoeficient1)%参数传出<br>Outcoficient2=assignin(‘caller’,’incoeficient2’,incoeficient2)%参数传出<br>(1a.m)</p>
-<p>outcoeficient1=evalin(‘caller’,’outcoeficient1’);%参数传入<br>outcoeficient2=evalin(‘caller,’outcoeficient2’)</p>
-<p>outcoficient3=assignin(‘caller’,’incoeficient3’,incoeficient3)%参数传出<br>outcoficient4=assignin(‘caller’,’incoeficient4’,incoeficient4)%参数传出<br>(1b.m)</p>
-</blockquote>
-<p>至此完成了参数的传递。<br>注意caller和base的区别。</p>
-<p>##三. 总结<br>当参数过多的时候，直接写在函数的参数传递中，严重影响函数的可读性，但是也会造成assignin和evalin语句过多，当参数较为稳定的时候，也可以采用一个cell数据进行打包。</p>
-<p>但是在自动转c的matlab coder中并不支持assignin和evalin两个函数，当需要自动转c的代码不要使用evalin和assignin。</p>
-<p>##四. 预告</p>
-<p>例子中只涉及到了单层级的参数传递，关于多层级的涉及到堆栈，下次一起写。</p>
+        <p>In the matlab programming, the top script file always call different  functions. Also the function calls lower functions. but how to transfer the coefficient package   </p>
+<p>in the different layers functions efficiently? which is very important to matlab programs’ readability.</p>
+<p>#1. Traditional methods  </p>
+<p>##1.1 Directly method<br>when a function is called, the input and output coefficients are set as the input and output coefficients of the function.  </p>
+<p>e.x.<br>[outdata1,outdata2,outdata3….,outcoefficient1,coefficient2,coefficient3….]= function(indata1,indata2,….,incofficient2…)</p>
+<p>##1.2 Package method<br>It is very interesting to find the data type name “cell” in the matlab programming. It can be used as a package to all the input or output coefficient as a package.  </p>
+<p>#2. assignin &amp; evalin function</p>
+<p>##2.1 The basic description</p>
+<p>These two function is offered by the matlab officially. You can find some docs in the official website.</p>
+<p>For example<br>when there are 3 functions named respectively 1.m 1a.m 1b.m.<br>and in 1.m file, the 1a.m and 1b.m are called in turn.</p>
+<p>There are some coefficients are computed in 1.m, it is showed following:</p>
+<p>also evalin and assignin function are used for coefficients transferring.</p>
+<p>Now the coefficients transferring is done. Please watch out the difference of caller and base.</p>
+<p>##2.2  Conclusion</p>
+<p>When there are so many input and output coefficients in the functions, these coefficients affected the readability obviously.</p>
+<p>So you can switched to the evalin and assignin function, but the too many coefficients also will bring many evalin and assignin sentence. The best way is package all the coefficients as a cell package.</p>
+<p>#3 plan</p>
+<p>I gonna discuss the how to transfer coefficient in a  complex and multiple layer function in the next times. </p>
 
       
     </div>
@@ -390,23 +379,17 @@ assignin
 
     <footer class="post-footer">
       
-
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-          </div>
-
-          <span class="post-nav-divider"></span>
-
-          <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/02/05/Hello-Hexo/" rel="prev" title="Hello Hexo">
-                Hello Hexo <i class="fa fa-chevron-right"></i>
-              </a>
-            
-          </div>
+        <div class="post-tags">
+          
+            <a href="/tags/matlab/" rel="tag"># matlab</a>
+          
+            <a href="/tags/evalin/" rel="tag"># evalin</a>
+          
+            <a href="/tags/assignin/" rel="tag"># assignin</a>
+          
         </div>
+      
+
       
 
       
@@ -450,17 +433,8 @@ assignin
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview sidebar-panel">
+      <section class="site-overview sidebar-panel sidebar-panel-active">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/uploads/images/avatar.jpg"
@@ -473,14 +447,28 @@ assignin
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-count">1</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
           
 
           
+            <div class="site-state-item site-state-categories">
+              
+                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-name">分类</span>
+              
+            </div>
+          
 
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
           
 
         </nav>
@@ -503,22 +491,6 @@ assignin
       </section>
 
       
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一-传统的funcion参数调用方法"><span class="nav-number">1.</span> <span class="nav-text">一. 传统的funcion参数调用方法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1-直接法"><span class="nav-number">1.1.</span> <span class="nav-text">1. 1 直接法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二-assignin和evalin函数"><span class="nav-number">2.</span> <span class="nav-text">二.  assignin和evalin函数</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
-      
 
     </div>
   </aside>
@@ -532,7 +504,7 @@ assignin
       <div class="footer-inner">
         <div class="copyright" >
   
-  &copy;  2016 - 
+  &copy; 
   <span itemprop="copyrightYear">2017</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
