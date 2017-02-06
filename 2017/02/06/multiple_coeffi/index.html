@@ -92,7 +92,7 @@ in the different layers functio">
 <meta property="og:site_name" content="AudioDSP">
 <meta property="og:description" content="In the matlab programming, the top script file always call different  functions. Also the function calls lower functions. but how to transfer the coefficient package   
 in the different layers functio">
-<meta property="og:updated_time" content="2017-02-06T10:15:10.000Z">
+<meta property="og:updated_time" content="2017-02-06T10:40:54.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="how to transfer cofficients in multi-layer matlab programm efficiently(1)">
 <meta name="twitter:description" content="In the matlab programming, the top script file always call different  functions. Also the function calls lower functions. but how to transfer the coefficient package   
@@ -362,22 +362,17 @@ in the different layers functio">
       
         <p>In the matlab programming, the top script file always call different  functions. Also the function calls lower functions. but how to transfer the coefficient package   </p>
 <p>in the different layers functions efficiently? which is very important to matlab programs’ readability.</p>
-<p>#1. Traditional methods  </p>
-<p>##1.1 Directly method<br>when a function is called, the input and output coefficients are set as the input and output coefficients of the function.  </p>
+<h1 id="1-Traditional-methods"><a href="#1-Traditional-methods" class="headerlink" title="1. Traditional methods"></a>1. Traditional methods</h1><h2 id="1-1-Directly-method"><a href="#1-1-Directly-method" class="headerlink" title="1.1 Directly method"></a>1.1 Directly method</h2><p>when a function is called, the input and output coefficients are set as the input and output coefficients of the function.  </p>
 <p>e.x.<br>[outdata1,outdata2,outdata3….,outcoefficient1,coefficient2,coefficient3….]= function(indata1,indata2,….,incofficient2…)</p>
-<p>##1.2 Package method<br>It is very interesting to find the data type name “cell” in the matlab programming. It can be used as a package to all the input or output coefficient as a package.  </p>
-<p>#2. assignin &amp; evalin function</p>
-<p>##2.1 The basic description</p>
-<p>These two function is offered by the matlab officially. You can find some docs in the official website.</p>
+<h2 id="1-2-Package-method"><a href="#1-2-Package-method" class="headerlink" title="1.2 Package method"></a>1.2 Package method</h2><p>It is very interesting to find the data type name “cell” in the matlab programming. It can be used as a package to all the input or output coefficient as a package.  </p>
+<h1 id="2-assignin-amp-evalin-function"><a href="#2-assignin-amp-evalin-function" class="headerlink" title="2. assignin &amp; evalin function"></a>2. assignin &amp; evalin function</h1><h2 id="2-1-The-basic-description"><a href="#2-1-The-basic-description" class="headerlink" title="2.1 The basic description"></a>2.1 The basic description</h2><p>These two function is offered by the matlab officially. You can find some docs in the official website.</p>
 <p>For example<br>when there are 3 functions named respectively 1.m 1a.m 1b.m.<br>and in 1.m file, the 1a.m and 1b.m are called in turn.</p>
 <p>There are some coefficients are computed in 1.m, it is showed following:</p>
 <p>also evalin and assignin function are used for coefficients transferring.</p>
 <p>Now the coefficients transferring is done. Please watch out the difference of caller and base.</p>
-<p>##2.2  Conclusion</p>
-<p>When there are so many input and output coefficients in the functions, these coefficients affected the readability obviously.</p>
+<h2 id="2-2-Conclusion"><a href="#2-2-Conclusion" class="headerlink" title="2.2  Conclusion"></a>2.2  Conclusion</h2><p>When there are so many input and output coefficients in the functions, these coefficients affected the readability obviously.</p>
 <p>So you can switched to the evalin and assignin function, but the too many coefficients also will bring many evalin and assignin sentence. The best way is package all the coefficients as a cell package.</p>
-<p>#3 plan</p>
-<p>I gonna discuss the how to transfer coefficient in a  complex and multiple layer function in the next times. </p>
+<h1 id="3-plan"><a href="#3-plan" class="headerlink" title="3 plan"></a>3 plan</h1><p>I gonna discuss the how to transfer coefficient in a  complex and multiple layer function in the next times. </p>
 
       
     </div>
@@ -453,8 +448,17 @@ in the different layers functio">
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/uploads/images/avatar.jpg"
@@ -510,6 +514,22 @@ in the different layers functio">
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-Traditional-methods"><span class="nav-number">1.</span> <span class="nav-text">1. Traditional methods</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1-Directly-method"><span class="nav-number">1.1.</span> <span class="nav-text">1.1 Directly method</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2-Package-method"><span class="nav-number">1.2.</span> <span class="nav-text">1.2 Package method</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-assignin-amp-evalin-function"><span class="nav-number">2.</span> <span class="nav-text">2. assignin & evalin function</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1-The-basic-description"><span class="nav-number">2.1.</span> <span class="nav-text">2.1 The basic description</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-2-Conclusion"><span class="nav-number">2.2.</span> <span class="nav-text">2.2  Conclusion</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-plan"><span class="nav-number">3.</span> <span class="nav-text">3 plan</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
     </div>
